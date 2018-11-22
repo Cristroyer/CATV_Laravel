@@ -1,0 +1,47 @@
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar">
+
+<table id="myTable">
+  <thead>
+    <tr class="header">
+      <th {{-- style="width:60%;" --}}>Name</th>
+      <th {{-- style="width:40%;" --}}>Country</th>
+      <th {{-- style="width:40%;" --}}colspan="3">&nbsp;</th>
+  </tr>
+  </thead>
+  <tbody>
+      @foreach($users as $user)
+  <tr>
+    <td>{{$user->name}}</td>
+    <td>{{$user->email}}</td>
+    <td>
+          @can('userDatas.show')
+        <a href="{{ route('userDatas.show', $user->id) }}" class="btn btn-sm btn-default">
+          Ver
+        </a>
+        @endcan
+    </td>
+        <td>
+          @can('users.edit')
+        <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-primary">
+          Editar
+        </a>
+        @endcan
+    </td>
+        <td>
+          @can('users.destroy')
+        {!! Form::open(['route' => ['users.destroy', $user->id],
+        'method'=>'DELETE']) !!}
+          <button class="btn btn-sm btn-danger">
+            Eliminar
+          </button>
+        {!! Form::close() !!}
+        @endcan
+    </td>
+        
+  </tr>
+  @endforeach
+  </tbody>
+
+
+</table>
+{{ $users->render()}}

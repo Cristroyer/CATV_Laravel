@@ -1,0 +1,27 @@
+
+    footer {
+        position: fixed;
+        background-color: #f8fafc;
+    }
+    
+    p.copyright { 
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        color: #333333;
+        text-align: center;
+    }
+
+    a.menu-element {
+        color: #333333;
+    }
+    
+    img.img {
+        position: top;
+        width: 100%;
+        color: #333333;
+        line-height: 40px;
+        font-size: 1em;
+        text-align: center;
+        bottom:0;
+    }

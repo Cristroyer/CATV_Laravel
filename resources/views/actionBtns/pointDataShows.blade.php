@@ -1,0 +1,1 @@
+<a href="{{ route('userPoints.show', $rut) }}" class="btn btn-sm btn-primary"> Ver Producción </a>
